@@ -1,0 +1,7 @@
+{
+  "name": "appOFHELL",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

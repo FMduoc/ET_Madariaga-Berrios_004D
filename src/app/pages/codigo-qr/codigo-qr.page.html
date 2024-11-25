@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Código QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="userData">
+    <qrcode [qrdata]="userData" [width]="256"></qrcode>
+  </div>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar Clase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="clases.length > 0">
+    <ion-item *ngFor="let clase of clases">
+      <ion-label>
+        <h2>{{ clase.nombre }}</h2>
+        <p>Sección: {{ clase.seccion }}</p>
+        <p>Horarios: {{ clase.horarios }}</p>
+      </ion-label>
+      <ion-button (click)="registrarEnClase(clase.id)" color="primary">Registrar</ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-text *ngIf="clases.length === 0" color="medium">
+    <p>No hay clases disponibles.</p>
+  </ion-text>
+</ion-content>

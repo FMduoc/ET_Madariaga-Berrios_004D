@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Clases</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="misClases.length > 0; else noClases">
+    <ion-item *ngFor="let clase of misClases">
+      <ion-label>
+        <h2>{{ clase.nombre }}</h2>
+        <p>Sección: {{ clase.seccion }}</p>
+        <p>Horarios: {{ clase.horarios }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noClases>
+    <ion-text color="medium" class="ion-text-center">
+      <h2>No estás registrado en ninguna clase.</h2>
+    </ion-text>
+  </ng-template>
+</ion-content>

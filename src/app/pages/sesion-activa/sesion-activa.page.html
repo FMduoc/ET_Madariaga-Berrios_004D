@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sesi&oacute;n Activa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="iniciarSesion()">
+    <ion-item>
+      <ion-label position="floating">Fecha de la sesi&oacute;n</ion-label>
+      <ion-datetime [(ngModel)]="fecha" name="fecha" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Estudiantes inscritos</ion-label>
+      <ion-list>
+        <ion-item *ngFor="let estudiante of estudiantesInscritos">
+          <ion-label>{{ estudiante }}</ion-label>
+          <ion-checkbox [(ngModel)]="asistencia[estudiante]" name="{{estudiante}}"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="leerQr()" expand="block" fill="clear" shape="round">
+        Leer QR
+      </ion-button>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!fecha">Registrar Asistencia</ion-button>
+  </form>
+</ion-content>

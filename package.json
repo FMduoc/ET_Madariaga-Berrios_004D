@@ -21,7 +21,10 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@capacitor/android": "6.2.0",
     "@capacitor/app": "6.0.2",
+    "@capacitor/barcode-scanner": "^1.0.1",
+    "@capacitor/camera": "^6.1.1",
     "@capacitor/core": "6.2.0",
     "@capacitor/haptics": "6.0.2",
     "@capacitor/keyboard": "6.0.3",
@@ -29,6 +32,7 @@
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
+    "swiper": "^11.1.15",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },

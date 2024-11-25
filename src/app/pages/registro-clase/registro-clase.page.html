@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <div class="centrar-card">
+    <form [formGroup]="registroForm">
+
+      <!-- Primer item -->
+      <ion-item>
+        <ion-input type="text" placeholder="nombre.." formControlName="nombre" label="Nombre:" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <!-- Alertas -->
+      <div id="alerta" *ngIf="registroForm.get('nombre')?.invalid && (registroForm.get('nombre')?.dirty || 
+              registroForm.get('nombre')?.touched)">
+        <div id="alerta" *ngIf="registroForm.get('nombre')?.hasError('required')">
+          *Nombre es obligatorio
+        </div>
+        <div id="alerta" *ngIf="registroForm.get('nombre')?.hasError('minlength')">
+          *Nombre debe tener mínimo 6 caracteres
+        </div>
+      </div>
+
+      <!-- Segundo item-->
+      <ion-item>
+        <ion-input type="text" formControlName="seccion" label="Sección:" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <!-- Alertas -->
+      <div id="alerta" *ngIf="registroForm.get('seccion')?.invalid && (registroForm.get('seccion')?.dirty || 
+              registroForm.get('seccion')?.touched)">
+        <div id="alerta" *ngIf="registroForm.get('seccion')?.hasError('required')">
+          *Sección es obligatoria
+        </div>
+        <div id="alerta" *ngIf="registroForm.get('seccion')?.hasError('minlength')">
+          *Sección debe tener mínimo 4 caracteres
+        </div>
+      </div>
+
+      <!-- Tercer item-->
+      <ion-item>
+        <ion-input type="text" formControlName="horarios" label="Horario:" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <!-- Alertas -->
+      <div id="alerta" *ngIf="registroForm.get('horarios')?.invalid && (registroForm.get('horarios')?.dirty || 
+              registroForm.get('horarios')?.touched)">
+        <div id="alerta" *ngIf="registroForm.get('horarios')?.hasError('required')">
+          *Horario es obligatorio
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 30px;">
+        <ion-button (click)="registrarClase()" [disabled]="!registroForm.valid" shape="round">
+          Crear Usuario
+        </ion-button>
+      </div>
+      
+    </form>
+  </div>
+</ion-content>

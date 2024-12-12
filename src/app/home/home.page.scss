@@ -5,6 +5,9 @@
   align-items: center;
   height: 100%;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  
 }
 
 #container strong {
@@ -23,4 +26,21 @@
 
 #container a {
   text-decoration: none;
+}
+
+.centro-imagen {
+  display: block; /* Hace que las imágenes se comporten como bloques */
+  margin: 0 auto; /* Centra las imágenes horizontalmente */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+ion-content {
+  background-image: url('https://images.pexels.com/photos/2873671/pexels-photo-2873671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Imagen de fondo */
+  background-size: cover; /* Asegúrate de que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100%; /* Asegúrate de que el ion-content tenga el 100% de altura */
+  display: flex; /* Usamos flex para centrar el contenido */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
 }

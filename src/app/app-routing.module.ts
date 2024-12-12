@@ -35,6 +35,18 @@ const routes: Routes = [
     path: 'mis-clases',
     loadChildren: () => import('./pages/mis-clases/mis-clases.module').then( m => m.MisClasesPageModule)
   },
+  {
+    path: 'justificativos',
+    loadChildren: () => import('./pages/justificativos/justificativos.module').then( m => m.JustificativosPageModule)
+  },
+  {
+    path: 'mis-justif',
+    loadChildren: () => import('./pages/mis-justif/mis-justif.module').then( m => m.MisJustifPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
 ];
 
 @NgModule({

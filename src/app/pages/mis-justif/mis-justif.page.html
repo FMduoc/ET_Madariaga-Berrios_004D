@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Justificativos</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/inicio" text="Volver" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="justificativos.length > 0; else noJustificativos">
+    <ion-item *ngFor="let justificativo of justificativos">
+      <ion-label>
+        <h2>ID: {{ justificativo.id }}</h2>
+        <p>Comentario del Estudiante: {{ justificativo.comentario }}</p>
+        <p>Comentario del Docente: {{ justificativo.comentDocente || 'No disponible' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #noJustificativos>
+    <ion-text color="medium" class="ion-text-center">
+      <h2>No has enviado justificativos.</h2>
+    </ion-text>
+  </ng-template>
+</ion-content>

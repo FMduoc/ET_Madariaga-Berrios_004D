@@ -12,7 +12,7 @@ export class CodigoQrPage implements OnInit {
   constructor() {
     const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
     if (user) {
-      this.userData = `Nombre: ${user.nombre}, Correo: ${user.email}, RUT: ${user.rut}`;
+      this.userData = `ID Estudiante: ${user.id}, Nombre: ${user.nombre}, Correo: ${user.email}, RUT: ${user.rut}`;
   }}
 
   ngOnInit() {

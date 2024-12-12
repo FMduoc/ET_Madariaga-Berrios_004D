@@ -30,4 +30,11 @@ export class MisClasesPage implements OnInit {
       });
     }
   }
+
+  ass2(){
+    
+  }
+  ass(){
+
+  }
 }

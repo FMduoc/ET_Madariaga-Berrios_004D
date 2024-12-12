@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Justificativo</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/mis-clases" text="Volver" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="centrar-card">
+    <form [formGroup]="registroForm">
+      <!-- Campo para comentario -->
+      <ion-item>
+        <ion-textarea
+          formControlName="comentario"
+          label="Comentario"
+          labelPlacement="floating"
+          placeholder="Describe tus razones de inasistencia..."></ion-textarea>
+      </ion-item>
+      <!-- Alertas -->
+      <div *ngIf="registroForm.get('comentario')?.invalid && (registroForm.get('comentario')?.dirty || registroForm.get('comentario')?.touched)">
+        <div *ngIf="registroForm.get('comentario')?.hasError('required')">
+          *El comentario es obligatorio.
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <ion-button (click)="registrarJustificativo()" [disabled]="!registroForm.valid" shape="round">
+          Enviar Justificativo
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

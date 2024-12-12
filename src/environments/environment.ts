@@ -8,9 +8,10 @@ export const environment = {
 };
 
 export const environment2 = {
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://api-fm-json.onrender.com',
   production: false
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

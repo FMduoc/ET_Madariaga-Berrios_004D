@@ -32,4 +32,8 @@ export class AuthService {
     sessionStorage.removeItem('ingresado');
     console.log("Sesión cerrada");
   }
+
+  actualizarUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.httpclient.put<Usuario>(`${this.apiUrl}/usuarios/${usuario.id}`, usuario);
+  }
 }

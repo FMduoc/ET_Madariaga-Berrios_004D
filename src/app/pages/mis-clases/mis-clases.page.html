@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Mis Clases</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/inicio" text="Volver" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,6 +15,12 @@
         <p>Sección: {{ clase.seccion }}</p>
         <p>Horarios: {{ clase.horarios }}</p>
       </ion-label>
+      <ion-button color="primary" [routerLink]="['/justificativos', { idEstudiante: estudianteId, idClase: clase.id }]">
+        Enviar Justificativo
+      </ion-button>
+      <ion-button color="primary" [routerLink]="['/codigo-qr']">
+        Generar Código QR
+      </ion-button>
     </ion-item>
   </ion-list>
 

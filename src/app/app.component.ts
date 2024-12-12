@@ -42,17 +42,12 @@ export class AppComponent {
   {
     icon:'document-text-sharp',
     name:'Justificativos',
-    redirecTo: '/inicio'
+    redirecTo: '/mis-justif'
   },
   {
     icon:'log-out-sharp',
     name:'Cerrar sesión',
     redirecTo: '/home'
-  },
-  {
-    icon:'apps-sharp',
-    name:'Generar QR',
-    redirecTo: '/codigo-qr'
   }
 ]
 

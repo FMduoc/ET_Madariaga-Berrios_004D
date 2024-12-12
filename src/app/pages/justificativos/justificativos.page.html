@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Justificativos</ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="end">
+    <ion-back-button defaultHref="/inicio" text="Volver" icon="chevron-back"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let justificativo of justificativos">
+      <ion-label>
+        <h2>ID: {{ justificativo.id }}</h2>
+        <p><strong>Comentario Estudiante:</strong> {{ justificativo.comentario }}</p>
+      </ion-label>
+
+      <ion-input 
+        [(ngModel)]="justificativo.comentDocente" 
+        placeholder="Comentario del docente"
+        type="text">
+      </ion-input>
+      
+      <ion-button (click)="guardarComentario(justificativo)">Guardar</ion-button>
+    </ion-item>
+    <ion-item *ngIf="justificativos.length === 0">
+      <ion-label>No hay justificativos para esta clase.</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

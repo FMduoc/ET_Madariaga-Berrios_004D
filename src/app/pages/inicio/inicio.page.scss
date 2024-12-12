@@ -1,0 +1,16 @@
+h1 {
+    text-align: center; /* Centra el texto de los encabezados */
+    margin: 20px 20px; /* Agrega espacio arriba y abajo, y 20px a los lados */
+  }
+  
+  .centro-imagen {
+    display: block; /* Hace que las imágenes se comporten como bloques */
+    margin: 0 auto; /* Centra las imágenes horizontalmente */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
+  /* Agregar un contenedor para el texto si no existe */
+  .contenedor {
+    padding: 0 20px; /* Agrega 20px de padding a los lados */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  }

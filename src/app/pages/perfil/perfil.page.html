@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/inicio" text="Volver" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="perfil-container">
+    <!-- Foto de perfil -->
+    <div class="foto-container">
+      <img *ngIf="fotoPerfil" [src]="fotoPerfil" alt="Foto de Perfil">
+      <input type="file" (change)="cargarFoto($event)" />
+    </div>
+
+    <!-- Información del usuario -->
+    <ion-item>
+      <ion-label>ID:</ion-label>
+      <ion-label>{{ usuario?.id }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input [(ngModel)]="nombre" placeholder="Ingresa tu nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>RUT:</ion-label>
+      <ion-label>{{ usuario?.rut }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-label>{{ usuario?.email }}</ion-label>
+    </ion-item>
+
+    <!-- Botón de guardar cambios -->
+    <ion-button expand="full" (click)="guardarCambios()">Actualizar Nombre</ion-button>
+  </div>
+  <div *ngIf="!usuario">
+    <p>No se ha encontrado información del usuario.</p>
+  </div>
+</ion-content>

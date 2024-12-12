@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ClasesService } from 'src/app/services/clases.service';
 import { AsistenciaService } from 'src/app/services/asistencia.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
@@ -17,6 +17,7 @@ export class SesionActivaPage implements OnInit {
   asistencia: { [key: string]: boolean } = {};
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private clasesService: ClasesService,
               private asistenciaService: AsistenciaService) { }
 
@@ -68,6 +69,10 @@ export class SesionActivaPage implements OnInit {
     }, error => {
       console.error('Error al registrar la asistencia:', error);
     });
+  }
+
+  verDetalle(idEstudiante: string) {
+    this.router.navigate(['/estudiante-detalle', idEstudiante]);
   }
 
 }

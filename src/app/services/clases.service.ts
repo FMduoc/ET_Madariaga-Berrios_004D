@@ -41,4 +41,5 @@ export class ClasesService {
   getClasePorId(idClase: string): Observable<Clases> {
     return this.httpclient.get<Clases>(`${this.apiUrl}/clases/${idClase}`);
   }
+
 }

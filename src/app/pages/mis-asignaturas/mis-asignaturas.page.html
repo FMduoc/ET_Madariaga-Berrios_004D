@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Mis Asignaturas</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/inicio" text="Volver" icon="chevron-back"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -12,6 +15,7 @@
         <p>{{ clase.horarios }}</p>
       </ion-label>
       <ion-button [routerLink]="['/sesion-activa', clase.id]">Iniciar sesión</ion-button>
+      <ion-button [routerLink]="['/justificativos', clase.id]">Justificativos</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

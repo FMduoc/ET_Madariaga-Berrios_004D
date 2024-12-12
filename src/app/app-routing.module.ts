@@ -35,6 +35,18 @@ const routes: Routes = [
     path: 'sesion-activa/:idClase',
     loadChildren: () => import('./pages/sesion-activa/sesion-activa.module').then( m => m.SesionActivaPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'justificativos/:idClase',
+    loadChildren: () => import('./pages/justificativos/justificativos.module').then( m => m.JustificativosPageModule)
+  },
+  {
+    path: 'estudiante-detalle/:idEstudiante',
+    loadChildren: () => import('./pages/estudiante-detalle/estudiante-detalle.module').then( m => m.EstudianteDetallePageModule)
+  },
 ];
 
 @NgModule({

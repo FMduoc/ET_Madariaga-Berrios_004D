@@ -35,16 +35,6 @@ export class AppComponent {
     redirecTo: '/perfil'
   },
   {
-    icon:'school-sharp',
-    name:'Clases',
-    redirecTo: '/inicio'
-  },
-  {
-    icon:'document-text-sharp',
-    name:'Justificativos',
-    redirecTo: '/inicio'
-  },
-  {
     icon:'log-out-sharp',
     name:'Cerrar sesión',
     redirecTo: '/home'
